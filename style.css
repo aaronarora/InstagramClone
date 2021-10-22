@@ -1,0 +1,364 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav.ignavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+.main-content {
+  padding-top: 60px;
+  min-height: 100vh; /* vh view height. Breaks up viewport into 100 pieces */
+  background-color: #f1f1f1;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 400px 0 auto;
+  padding: 0 16px;
+}
+
+.post {
+  background-color: #fff;
+  border: #ccc 1px solid;
+  margin: 32px 0;
+}
+
+.post .postimage {
+  /* looking for an element with class post and postimage */
+  width: 100%;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.avatar.lg {
+  width: 60px;
+  height: 60px;
+}
+
+.avatar img {
+  width: 100%;
+}
+
+.postauthor {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 8px;
+}
+
+.postactions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.align-right {
+  margin-left: auto;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.postlikes {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.postfooter {
+  padding: 8px;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.posttimestamp {
+  text-transform: uppercase;
+  color: #888;
+  margin-top: 8px;
+}
+
+.postcomment {
+  display: flex;
+  justify-content: space-between;
+}
+
+.postcomment input {
+  outline: none;
+  border: none;
+}
+
+.suggestionscontainer {
+  background-color: #fff;
+  border: #ccc 1px solid;
+  margin: 32px 0;
+  padding: 16px;
+}
+
+.suggestionheader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.suggestionheader h3 {
+  margin: 0;
+  color: #888;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.suggestionsbody {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+}
+
+.suggestioncard {
+  border: #ccc 1px solid;
+  padding: 16px;
+  position: relative;
+}
+
+.icon.close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* these 3 lines for centering content within an element */
+  background-color: #0095f6;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.suggestioncard .btn {
+  /* space means we are looking for button inside of suggestion card */
+  margin-top: 32px;
+}
+
+.suggestioncard .avatar {
+  margin-bottom: 16px;
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+.suggestioncard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.suggestioncardname {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.suggestioncardsubheading {
+  color: #888;
+  font-size: 12px;
+}
+
+.icon-blue {
+  color: #0095f6;
+}
+
+.suggestioncard .name {
+  display: inline-block;
+  max-width: 100px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.sidecontent {
+  position: fixed;
+  right: 0;
+  top: 62px;
+  width: 400px;
+  padding: 4px;
+}
+
+.userbox {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px;
+}
+
+.userdetails .name {
+  font-weight: bold;
+}
+
+.userdetails .subheading {
+  color: #888;
+}
+
+.avatar.hasstory {
+  /* no space means combination of the two so has both classes */
+
+  border: 4px solid rgb(208, 145, 224);
+}
+
+.storieslist {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #0095f6;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer,
+footer a {
+  color: rgb(196, 190, 190);
+}
+
+.storiesheading {
+  display: flex;
+  justify-content: space-between;
+}
+.subheader {
+  color: #888;
+}
+
+.mobilestories {
+  display: none;
+}
+.mobilestories .storieslist {
+  display: flex;
+}
+
+.mobilestories .subheading {
+  display: none;
+}
+.mobilestories .userbox {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 800px) {
+  .sidecontent {
+    display: none;
+    position: relative;
+    width: 100%;
+  }
+  .container {
+    margin: 0 auto;
+  }
+
+  .mobilestories {
+    display: flex;
+  }
+}
+
+nav .searchbox {
+  position: relative;
+  padding-right: 3%;
+  border: solid 1px rgba(219, 219, 219, 219, 1);
+  border-style: none;
+  border-radius: 3px;
+  color: rgba(142, 142, 142, 142, 1);
+  font-weight: 300;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+nav .placeholder {
+  position: absolute;
+  left: 8px;
+  opacity: 0.5;
+  pointer-events: none;
+  top: 4px;
+}
+
+nav .searchbox input:focus ~ .placeholder {
+  display: none;
+}
+
+nav input {
+  height: 20px;
+}
+
+.ignavbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.iconsig {
+  padding-top: 7px;
+  width: 120px;
+}
+
+.iconleft {
+  /* margin-bottom: 2px;
+  height: 50px; */
+  font-size: 30px;
+  margin-left: 20px;
+}
+
+.leftsidenav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5px;
+}
+
+#pipe {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font-size: 40px;
+  font-weight: lighter;
+  font-family: monospace;
+  color: rgb(194, 189, 189);
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-bottom: 5px;
+}
+
+.far {
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 25px;
+}
+/* 
+.leftsidenav .vertical {
+  width: 200px;
+  size: 400px;
+} */
+
+img {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+}
